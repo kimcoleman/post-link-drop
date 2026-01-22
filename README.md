@@ -1,7 +1,7 @@
-Post Post Link Drop
+Post Link Drop
 =========
 
-**Post Post Link Drop** is a WordPress plugin that creates a “link-in-bio” style image grid by importing Instagram posts and letting you link each item to any destination URL.
+**Post Link Drop** is a WordPress plugin that creates a “link-in-bio” style image grid by importing Instagram posts and letting you link each item to any destination URL.
 
 Features
 --------
