@@ -23,8 +23,8 @@ Features:
 
 1. Upload the `post-link-drop` folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Navigate to Post Link Drop > Settings to connect your Instagram account.
-1. Use the `[link_drop]` shortcode to display the grid on any page.
+1. Navigate to `Post Link Drop` > `Settings` to connect your Instagram account.
+1. Use the `[post_link_drop_grid]` shortcode to display the grid on any page.
 
 == Changelog ==
 

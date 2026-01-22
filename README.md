@@ -6,22 +6,22 @@ Post Link Drop
 Features
 --------
 
-*   Import posts from Instagram Business or Creator accounts
-*   Download and rehost images in your WordPress Media Library
-*   Link each imported item to any URL
-*   Responsive grid display via shortcode
-*   Automatic scheduled imports via WP-Cron
-*   Alt text generation from captions (editable)
-*   Supports images, video thumbnails, and carousel posts
+* Import posts from Instagram Business or Creator accounts
+* Download and rehost images in your WordPress Media Library
+* Link each imported item to any URL
+* Responsive grid display via shortcode
+* Automatic scheduled imports via WP-Cron
+* Alt text generation from captions (editable)
+* Supports images, video thumbnails, and carousel posts
 
 Requirements
 ------------
 
-*   WordPress 5.0+
-*   PHP 7.4+
-*   Instagram Business or Creator account
-*   A Facebook Page connected to your Instagram account
-*   Meta (Facebook) Developer account
+* WordPress 5.0+
+* PHP 7.4+
+* Instagram Business or Creator account
+* A Facebook Page connected to your Instagram account
+* Meta (Facebook) Developer account
 
 Installation
 ------------
@@ -88,8 +88,8 @@ To complete setup, you must add your Instagram account as a tester:
 
 ✅ Notes:
 
-*   Your Instagram account must be connected to the correct Facebook account/business
-*   The Facebook user logged into Meta Developer must have full/manage access
+* Your Instagram account must be connected to the correct Facebook account/business
+* The Facebook user logged into Meta Developer must have full/manage access
 
 1.  Click **Generate Token**
 2.  Copy and save the token immediately**Important:** Meta will not show it again.
@@ -113,31 +113,31 @@ Go to **Post Link Drop > Settings** to configure:
 
 ### Instagram Connection
 
-*   **Access Token**: Instagram Graph API access token
-*   **Instagram User ID**: Your numeric Instagram user ID
-*   **Test Connection**: Verify credentials
+* **Access Token**: Instagram Graph API access token
+* **Instagram User ID**: Your numeric Instagram user ID
+* **Test Connection**: Verify credentials
 
 ### Import Settings
 
-*   **Enable Auto-Import**: Toggle scheduled importing
-*   **Import Interval**:
-    *   Every 15 minutes
-        
-    *   Every 30 minutes
-        
-    *   Hourly (default)
-        
-    *   Twice Daily
-        
-    *   Daily
-        
-*   **Import Limit**: Max posts per run (12, 24, 48, or 100)
+* **Enable Auto-Import**: Toggle scheduled importing
+* **Import Interval**:
+  * Every 15 minutes
+    
+  * Every 30 minutes
+    
+  * Hourly (default)
+    
+  * Twice Daily
+    
+  * Daily
+    
+* **Import Limit**: Max posts per run (12, 24, 48, or 100)
 
 ### Manual Actions
 
-*   **Run Import Now**: Manually trigger an import (rate limited to once per 2 minutes)
-*   **Last Import**: Timestamp of most recent successful import
-*   **Last Error**: Displays the most recent import error (if any)
+* **Run Import Now**: Manually trigger an import (rate limited to once per 2 minutes)
+* **Last Import**: Timestamp of most recent successful import
+* **Last Error**: Displays the most recent import error (if any)
 
 Usage
 -----
@@ -146,74 +146,68 @@ Usage
 
 Use this shortcode:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   [link_drop_grid]   `
+`[post_link_drop_grid]`
 
 ### Shortcode Attributes
 
-AttributeDefaultDescriptioncount12Number of items to displaycolumns3Number of grid columnsgap1remSpace between tilesstatuslinkedShow linked or all itemsorderbyig\_timestampSort fieldorderDESCASC or DESCnew\_tabtrueOpen links in new tabclass_(empty)_Additional wrapper CSS class
-
-### Examples
-
-3-column grid showing 9 items:
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   [link_drop_grid count="9" columns="3"]   `
-
-Include unlinked items and use 4 columns:
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   [link_drop_grid status="all" columns="4"]   `
-
-Custom spacing:
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   [link_drop_grid count="6" gap="0.5rem"]   `
+* **count** (int, default: 12)Number of items to show.
+* **status** (string, default: linked)Filters items by status meta value.
+  * Use **all** to show everything **except** items with status hidden (hidden is always excluded).
+* **columns** (int, default: 4)Number of grid columns. Used as the CSS variable --pld-columns.
+* **gap** (string, default: 1rem)Space between grid items. Used as the CSS variable --pld-gap.
+* **new\_tab** (boolean, default: true)Whether links open in a new tab.
+  * When true, links get target="\_blank" and rel="noopener" and the aria-label notes it opens in a new tab.
+* **orderby** (string, default: ig\_timestamp)_Currently not used_ in the query logic (the query always sorts by the ig\_timestamp meta value anyway).
+* **order** (string, default: DESC)Sort direction. Only ASC is honored—anything else becomes DESC.
+* **class** (string, default: "")Adds an extra CSS class to the grid wrapper (appended to pld-grid).
 
 Managing Grid Items
 -------------------
 
 ### Viewing Items
 
-Go to **Post Link Drop > Grid Items** to view imported posts.
+Go to **Post Link Drop > All Post Link Drop Items** to view imported posts.
 
-### Grid Item Columns
+### Item Columns
 
-*   **Thumbnail**: 60×60 preview image
-*   **IG Date**: Instagram post date
-*   **Caption**: First 10 words of the caption
-*   **Destination URL**: Link target
-*   **Status**: linked / unlinked / hidden
-*   **Actions**: Hide/unhide controls
+* **Thumbnail**: 60×60 preview image
+* **IG Date**: Instagram post date
+* **Destination URL**: Link target
+* **Status**: linked / unlinked / hidden
+* **Actions**: Hide/unhide controls
 
 ### Linking Items
 
 #### Quick Link (Recommended)
 
-1.  Find the item in the Grid Items list
+1.  Find the item in the Items list
 2.  Enter the destination URL in the **Destination URL** column
 3.  Press **Enter** or click **Link**
 4.  Status updates to **linked**
 
 #### Full Edit
 
-1.  Click a grid item to edit it
+1.  Click an item to edit it
 2.  In the **Linking** meta box:
-    *   Set **Status** (unlinked / linked / hidden)
-        
-    *   Enter a **Destination URL**, **or**
-        
-    *   Select an existing **Post/Page**
-        
+  * Set **Status** (unlinked / linked / hidden)
+    
+  * Enter a **Destination URL**, **or**
+    
+  * Select an existing **Post/Page**
+    
 3.  Click **Update**
 
 ### Item Statuses
 
-*   **Linked**: Has a destination URL and appears in the grid
-*   **Unlinked**: Has no destination URL; excluded from default display
-*   **Hidden**: Explicitly excluded from the grid
+* **Linked**: Has a destination URL and appears in the grid
+* **Unlinked**: Has no destination URL; excluded from default display
+* **Hidden**: Explicitly excluded from the grid
 
 ### Editing Alt Text
 
 Alt text is generated from the Instagram caption. To customize it:
 
-1.  Edit a grid item
+1.  Edit an item
 2.  Find the **Alt Text** field in the Details meta box
 3.  Enter your custom alt text
 4.  Click **Update**
@@ -223,31 +217,31 @@ Troubleshooting
 
 ### “Invalid Access Token”
 
-*   Your token may have expired — generate a new long-lived token
-*   Confirm you're using an **Instagram Graph API** token (not Basic Display)
-*   Verify the token has required permissions
+* Your token may have expired — generate a new long-lived token
+* Confirm you're using an **Instagram Graph API** token (not Basic Display)
+* Verify the token has required permissions
 
 ### “Invalid User ID”
 
-*   Confirm you entered the numeric ID (not your username)
-*   It should be a long number like: 17841400000000000
+* Confirm you entered the numeric ID (not your username)
+* It should be a long number like: 17841400000000000
 
 ### Images Not Importing
 
-*   Confirm the Instagram account is Business/Creator
-*   Confirm a Facebook Page is connected
-*   Confirm required permissions were added in Meta
+* Confirm the Instagram account is Business/Creator
+* Confirm a Facebook Page is connected
+* Confirm required permissions were added in Meta
 
 ### Grid Not Displaying
 
-*   Confirm you have items with **linked** status
-*   Confirm destination URLs are set
-*   Clear caching and refresh
+* Confirm you have items with **linked** status
+* Confirm destination URLs are set
+* Clear caching and refresh
 
 ### Import Rate Limited
 
-*   Manual imports are limited to once every 2 minutes
-*   Wait and try again, or enable auto-import
+* Manual imports are limited to once every 2 minutes
+* Wait and try again, or enable auto-import
 
 Frequently Asked Questions
 --------------------------
@@ -260,9 +254,9 @@ No. The Instagram Graph API requires a Business or Creator account connected to 
 
 Long-lived tokens are typically valid for 60–90 days. Regenerate every 60 days to avoid interruptions.
 
-### Will deleting a grid item delete the Instagram post?
+### Will deleting an imported item delete the Instagram post?
 
-No. Grid items are local copies in WordPress.
+No. Post Link Drop Items are local copies in WordPress.
 
 ### Can I import from multiple Instagram accounts?
 
@@ -285,12 +279,12 @@ Changelog
 
 ### 1.0.0
 
-*   Initial release
-*   Instagram import via Graph API
-*   Grid item management
-*   Shortcode display
-*   Scheduled auto-import
-*   Alt text generation
+* Initial release
+* Instagram import via Graph API
+* Grid item management
+* Shortcode display
+* Scheduled auto-import
+* Alt text generation
 
 License
 -------
