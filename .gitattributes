@@ -1,0 +1,4 @@
+# Items to ignore when downloading a zip
+.gitattributes export-ignore
+.gitignore export-ignore
+README.md export-ignore

@@ -1,0 +1,103 @@
+/**
+ * Post Link Drop Grid - Frontend Styles
+ *
+ * @package Post_Link_Drop
+ */
+
+.pld-grid {
+	--pld-columns: 4;
+	--pld-gap: 1rem;
+
+	display: grid;
+	grid-template-columns: repeat(var(--pld-columns), 1fr);
+	gap: var(--pld-gap);
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.pld-grid__item {
+	position: relative;
+	display: block;
+	aspect-ratio: 4 / 5;
+	overflow: hidden;
+	background-color: #f0f0f0;
+	text-decoration: none;
+	border-radius: 0;
+}
+
+.pld-grid__item:hover,
+.pld-grid__item:focus {
+	outline: none;
+}
+
+.pld-grid__item:hover .pld-grid__image,
+.pld-grid__item:focus .pld-grid__image {
+	transform: scale(1.05);
+}
+
+.pld-grid__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0);
+	color: #fff;
+	opacity: 0;
+	transition: background-color 0.3s ease, opacity 0.3s ease;
+	pointer-events: none;
+}
+
+.pld-grid__overlay svg {
+	width: 2rem;
+	height: 2rem;
+}
+
+.pld-grid__item:hover .pld-grid__overlay,
+.pld-grid__item:focus .pld-grid__overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 1;
+}
+
+.pld-grid__image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.pld-grid {
+		--pld-columns: 2;
+	}
+}
+
+@media (max-width: 480px) {
+	.pld-grid {
+		--pld-columns: 2;
+		--pld-gap: 0.25rem;
+	}
+}
+
+/* Fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 4 / 5) {
+	.pld-grid__item {
+		padding-bottom: 125%;
+		height: 0;
+	}
+
+	.pld-grid__item .pld-grid__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
