@@ -152,8 +152,8 @@ class Settings {
 		?>
 		<input type="password" name="post_link_drop_access_token" id="post_link_drop_access_token" value="<?php echo esc_attr( $value ); ?>" class="regular-text" autocomplete="off">
 		<p class="description">
-			<?php esc_html_e( 'Your Instagram Graph API long-lived access token.', 'post-link-drop' ); ?>
-			<a href="https://developers.facebook.com/docs/instagram-basic-display-api/guides/long-lived-access-tokens" target="_blank" rel="noopener"><?php esc_html_e( 'Learn more', 'post-link-drop' ); ?></a>
+			<?php esc_html_e( 'Your Instagram Graph API long-lived access token. Note: you must generate a new key and authenticate it here every 90 days to maintain a connection with your Instagram account.', 'post-link-drop' ); ?>
+			<a href="https://github.com/kimcoleman/post-link-drop?tab=readme-ov-file#getting-your-instagram-api-credentials" target="_blank" rel="noopener"><?php esc_html_e( 'Learn more', 'post-link-drop' ); ?></a>
 		</p>
 		<?php
 	}

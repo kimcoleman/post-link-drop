@@ -84,17 +84,10 @@ To complete setup, you must add your Instagram account as a tester:
 1.  Return to your Meta app dashboard
 2.  Go to **Use Cases** → **Instagram** → **Customize**
 3.  Under setup **Step 2**, click **Add Account**
-4.  Log in via the modal and authorize your Instagram account
-
-✅ Notes:
-
-* Your Instagram account must be connected to the correct Facebook account/business
-* The Facebook user logged into Meta Developer must have full/manage access
-
-1.  Click **Generate Token**
-2.  Copy and save the token immediately**Important:** Meta will not show it again.
-
-Also in Step 2, Meta will show your **Instagram User ID** (a numeric value).You need that for the plugin settings too.
+4.  Log in via the modal and authorize your Instagram account. Your Instagram account must be connected to the correct Facebook account/business. The Facebook user logged into Meta Developer must have full/manage access
+5.  Click **Generate Token**
+6.  Copy and save the token immediately. Meta will not show it again.
+7.  Also in Step 2, Meta will show your **Instagram User ID** (a numeric value).You need that for the plugin settings too.
 
 **Reminder:** Access tokens must be refreshed before they expire.They typically last around **60–90 days**, so set a reminder to regenerate every **60 days**.
 
