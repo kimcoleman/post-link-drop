@@ -72,6 +72,10 @@
 	transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.pld-grid__item--square .pld-grid__image {
+	object-fit: contain;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
 	.pld-grid {

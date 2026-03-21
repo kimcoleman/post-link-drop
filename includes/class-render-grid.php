@@ -181,10 +181,7 @@ class Render_Grid {
 		}
 
 		// Get image.
-		$image = wp_get_attachment_image_src( $attachment_id, 'pld_square' );
-		if ( ! $image ) {
-			$image = wp_get_attachment_image_src( $attachment_id, 'medium' );
-		}
+		$image = wp_get_attachment_image_src( $attachment_id, 'full' );
 
 		if ( ! $image ) {
 			return;
@@ -193,6 +190,7 @@ class Render_Grid {
 		$img_url    = $image[0];
 		$img_width  = $image[1];
 		$img_height = $image[2];
+		$is_square  = ( $img_width > 0 && $img_height > 0 && $img_width === $img_height );
 
 		// Build accessible link label.
 		$domain = wp_parse_url( $destination_url, PHP_URL_HOST );
@@ -212,9 +210,11 @@ class Render_Grid {
 		}
 
 		// Build attributes.
+		$item_class = 'pld-grid__item' . ( $is_square ? ' pld-grid__item--square' : '' );
+
 		$link_attrs = array(
 			'href'       => esc_url( $destination_url ),
-			'class'      => 'pld-grid__item',
+			'class'      => $item_class,
 			'aria-label' => $aria_label,
 		);
 

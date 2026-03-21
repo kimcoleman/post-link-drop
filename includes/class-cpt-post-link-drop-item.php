@@ -32,7 +32,6 @@ class CPT_Post_Link_Drop_Item {
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
-		add_action( 'init', array( $this, 'register_image_size' ) );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'save_post_' . self::POST_TYPE, array( $this, 'save_meta_boxes' ), 10, 2 );
 		add_filter( 'manage_' . self::POST_TYPE . '_posts_columns', array( $this, 'add_admin_columns' ) );
@@ -81,13 +80,6 @@ class CPT_Post_Link_Drop_Item {
 		);
 
 		register_post_type( self::POST_TYPE, $args );
-	}
-
-	/**
-	 * Register custom image size.
-	 */
-	public function register_image_size() {
-		add_image_size( 'pld_square', 600, 600, true );
 	}
 
 	/**
