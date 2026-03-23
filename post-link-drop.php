@@ -3,7 +3,7 @@
  * Plugin Name: Post Link Drop
  * Plugin URI: https://github.com/kimcoleman/post-link-drop
  * Description: Import Instagram posts and build a locally-hosted image grid for link-in-bio style pages.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Kim Coleman
  * Author URI: https://github.com/kimcoleman/
  * License: GPL-3.0+
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Plugin version.
-define( 'POST_LINK_DROP_VERSION', '1.0.0' );
+define( 'POST_LINK_DROP_VERSION', '1.0.1' );
 
 // Plugin directory path.
 define( 'POST_LINK_DROP_PATH', plugin_dir_path( __FILE__ ) );

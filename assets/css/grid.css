@@ -5,7 +5,7 @@
  */
 
 .pld-grid {
-	--pld-columns: 4;
+	--pld-columns: 2;
 	--pld-gap: 1rem;
 
 	display: grid;
@@ -77,17 +77,41 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 	.pld-grid {
-		--pld-columns: 2;
+		--pld-gap: 0.25rem;
 	}
 }
 
-@media (max-width: 480px) {
-	.pld-grid {
-		--pld-columns: 2;
-		--pld-gap: 0.25rem;
-	}
+/* Load more */
+.pld-load-more__wrapper {
+	text-align: center;
+	margin-top: var(--pld-gap, 1rem);
+}
+
+.pld-load-more {
+	display: inline-block;
+	padding: 0.625rem 1.5rem;
+	background-color: #000;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	font-size: 0.875rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	transition: opacity 0.2s ease;
+}
+
+.pld-load-more:hover,
+.pld-load-more:focus {
+	opacity: 0.75;
+	outline: none;
+}
+
+.pld-load-more--loading {
+	opacity: 0.5;
+	cursor: wait;
 }
 
 /* Fallback for browsers that don't support aspect-ratio */
